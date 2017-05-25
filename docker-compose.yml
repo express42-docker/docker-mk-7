@@ -2,7 +2,7 @@ version: '3'
 
 services:
   db:
-    image: express42/mongodb:dockermk-mar
+    image: express42/mongodb:mc-may
     networks:
       - back
     deploy:
@@ -17,7 +17,7 @@ services:
       retries: 60
 
   backend:
-    image: express42/blog_backend:dockermk-mar
+    image: express42/blog_backend:mc-may
     environment:
       - MONGO_HOST=blog_db
     deploy:
@@ -38,7 +38,7 @@ services:
       retries: 60
 
   ui:
-    image: express42/blog_ui:dockermk-mar
+    image: express42/blog_ui:mc-may
     environment:
       - BLOG_BACKEND_HOST=blog_backend
       - BLOG_BACKEND_PORT=9292
